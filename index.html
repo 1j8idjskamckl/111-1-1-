@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎈 우리들의 에버랜드 & 스몹 대작전 🎈</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #fef9f3;
+    }
+    .title-font {
+      font-family: 'Gamja Flower', cursive;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 text-gray-700">
+
+  <div class="max-w-4xl mx-auto">
+    <header class="text-center my-8 bg-gradient-to-r from-amber-100 to-orange-100 p-6 rounded-3xl shadow-sm border border-amber-200">
+      <h1 class="text-4xl md:text-5xl font-bold text-orange-600 title-font mb-2">✨ 에버랜드 & 스몹 고양 환상의 여정 ✨</h1>
+      <p class="text-sm text-amber-800 font-medium">📅 날짜: 2026년 7월 11일(토) ~ 7월 12일(일)</p>
+      
+      <div class="my-4 bg-white/70 inline-block px-6 py-2.5 rounded-2xl border border-orange-200/50 shadow-inner">
+        <span id="dday-title" class="font-bold text-orange-600 text-lg mr-2">⏳ 출발까지</span>
+        <span id="countdown-timer" class="font-bold text-gray-800 text-lg tracking-wider">계산 중...</span>
+      </div>
+
+      <div class="mt-2 flex flex-wrap gap-2 justify-center">
+        <a href="https://bus.changwon.go.kr/" target="_blank" class="px-3 py-1 bg-white text-xs rounded-full shadow-sm text-orange-500 font-bold border border-orange-200 hover:scale-105 transition">🚌 창원버스정보</a>
+        <a href="https://www.kobus.co.kr/" target="_blank" class="px-3 py-1 bg-white text-xs rounded-full shadow-sm text-orange-500 font-bold border border-orange-200 hover:scale-105 transition">🎟️ 고속버스예매 (코버스)</a>
+        <a href="https://reservation.everland.com/" target="_blank" class="px-3 py-1 bg-white text-xs rounded-full shadow-sm text-orange-500 font-bold border border-orange-200 hover:scale-105 transition">🎡 에버랜드 스마트예약</a>
+        <a href="https://www.smob.co.kr/ticket/park" target="_blank" class="px-3 py-1 bg-white text-xs rounded-full shadow-sm text-orange-500 font-bold border border-orange-200 hover:scale-105 transition">🎯 스몹 온라인예매</a>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <div class="lg:col-span-2 bg-white p-6 rounded-3xl shadow-sm border border-orange-100">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-amber-900 title-font flex items-center gap-2">
+            ⏰ 타임라인 <span class="text-xs font-normal text-gray-400 font-sans">(글자를 클릭해서 언제든지 수정해 보세요!)</span>
+          </h2>
+          <button onclick="addNewStep()" class="bg-amber-400 hover:bg-amber-500 text-white font-bold px-3 py-1.5 text-xs rounded-full transition shadow-sm">+ 항목 추가</button>
+        </div>
+        
+        <div id="timeline" class="space-y-4 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-amber-100 before:block">
+          
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">1</div>
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">05:20 ~ 05:23</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">염전사거리(519825) 정류장 대기</p>
+              <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">상리 종점 첫차(05:20) 대기하기</p>
+              <div class="mt-2 flex gap-1">
+                <a href="https://map.naver.com/p/search/%EC%97%BC%EC%A0%84%EC%82%AC%EA%B1%B0%EB%A6%AC%20%EB%B2%84%EC%8A%A4%EC%A0%95%EB%A5%98%EC%9E%A5" target="_blank" class="inline-block bg-white text-[10px] text-green-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">네이버 지도</a>
+                <a href="https://map.kakao.com/?q=%EC%97%BC%EC%A0%84%EC%82%AC%EA%B1%B0%EB%A6%AC%20%EB%B2%84%EC%8A%A4%EC%A0%95%EB%A5%98%EC%9E%A5" target="_blank" class="inline-block bg-white text-[10px] text-yellow-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">카카오맵</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">2</div>
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">05:25 ~ 05:30</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">163번 버스 탑승 및 출발</p>
+              <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">새벽 시간 조기 통과 주의!</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">3</div>
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">06:20 ~ 06:30</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">마산고속버스터미널 도착</p>
+              <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">터미널 내 화장실 및 정비 시간</p>
+              <div class="mt-2 flex gap-1">
+                <a href="https://map.naver.com/p/search/%EB%A7%88%EC%82%B0%EA%B3%A0%EC%86%8D%EB%B2%84%EC%8A%A4%ED%84%B0%EB%AF%B8%EB%84%90?c=15.00,0,0,0,dh" target="_blank" class="inline-block bg-white text-[10px] text-green-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">네이버 지도</a>
+                <a href="https://map.kakao.com/?q=%EB%A7%88%EC%82%B0%EA%B3%A0%EC%86%8D%EB%B2%84%EC%8A%A4%ED%84%B0%EB%AF%B8%EB%84%90" target="_blank" class="inline-block bg-white text-[10px] text-yellow-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">카카오맵</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-orange-200 flex items-center justify-center font-bold text-orange-800 z-10 shrink-0 text-xs">4</div>
+            <div class="bg-orange-50/50 p-3 rounded-2xl border border-orange-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-orange-200 text-orange-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">07:30 ~ 11:45</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">마산 → 용인공용버스터미널 이동 🚌</p>
+              <p class="text-xs text-orange-600 mt-0.5" contenteditable="true">고속버스 주말 첫차 탑승 (소요시간 정체 감안)</p>
+              <div class="mt-2 flex flex-wrap gap-1 items-center">
+                <a href="https://www.kobus.co.kr/" target="_blank" class="inline-block bg-orange-500 text-white text-[10px] px-2 py-0.5 rounded-md shadow-sm font-bold">🎟️ 고속버스 예매하기</a>
+                <a href="https://map.naver.com/p/search/%EC%9A%A9%EC%9D%B8%EA%B3%B5%EC%9A%A9%EB%B2%84%EC%8A%A4%ED%84%B0%EB%AF%B8%EB%84%90/place/13453807?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank" class="inline-block bg-white text-[10px] text-green-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">네이버 지도</a>
+                <a href="https://map.kakao.com/?q=%EC%9A%A9%EC%9D%B8%EA%B3%B5%EC%9A%A9%EB%B2%84%EC%8A%A4%ED%84%B0%EB%AF%B8%EB%84%90" target="_blank" class="inline-block bg-white text-[10px] text-yellow-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">카카오맵</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">5</div>
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">11:45 ~ 12:10</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">용인 터미널 내 버스정류장 이동 및 대기</p>
+              <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">약 20분간의 여유 시간! 천천히 움직이기</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">6</div>
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">12:10 ~ 12:40</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">시내버스 탑승 → 에버랜드 정문 도착 🎡</p>
+              <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">12:40 정문 최종 도착 및 짜릿한 입장!</p>
+              <div class="mt-2 flex gap-1">
+                <a href="https://map.naver.com/p/search/%EC%97%90%EB%B2%84%EB%9E%9C%EB%93%9C?c=15.00,0,0,0,dh" target="_blank" class="inline-block bg-white text-[10px] text-green-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">네이버 지도</a>
+                <a href="https://map.kakao.com/?q=%EC%97%90%EB%B2%84%EB%9E%9C%EB%93%9C" target="_blank" class="inline-block bg-white text-[10px] text-yellow-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">카카오맵</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-red-200 flex items-center justify-center font-bold text-red-800 z-10 shrink-0 text-xs">7</div>
+            <div class="bg-red-50/50 p-3 rounded-2xl border border-red-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-red-200 text-red-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">12:40 ~ 15:10</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-red-900" contenteditable="true">🍿 에버랜드 자유시간 & 점심식사</p>
+              <p class="text-xs text-red-600 mt-0.5" contenteditable="true">밥 든든히 먹고 주요 어트랙션 즐기기!</p>
+              <div class="mt-2"><a href="https://reservation.everland.com/" target="_blank" class="inline-block bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-md shadow-sm font-bold">🎟️ 에버랜드 스마트 예약하기</a></div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-purple-200 flex items-center justify-center font-bold text-purple-800 z-10 shrink-0 text-xs">8</div>
+            <div class="bg-purple-50/50 p-3 rounded-2xl border border-purple-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-purple-200 text-purple-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">15:10 ~ 16:40</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">서울/기흥 방향 지하철 다 함께 이동 🚃</p>
+              <p class="text-xs text-purple-600 mt-0.5" contenteditable="true"><b>[오후 16:40 분기점]</b> 우영이는 왕십리/고려대 방면 분리 출발!</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-indigo-200 flex items-center justify-center font-bold text-indigo-800 z-10 shrink-0 text-xs">9</div>
+            <div class="bg-indigo-50/50 p-3 rounded-2xl border border-indigo-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-indigo-200 text-indigo-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">16:40 ~ 20:00</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">🔥 일행: 고양 스타필드 '스몹' 점령!</p>
+              <p class="text-xs text-indigo-600 mt-0.5" contenteditable="true">18:00 ~ 20:00 주말 액티비티 2시간 패스 (청소년 25,000원)</p>
+              <div class="mt-2 flex flex-wrap gap-1 items-center">
+                <a href="https://www.smob.co.kr/ticket/park" target="_blank" class="inline-block bg-indigo-600 text-white text-[10px] px-2 py-0.5 rounded-md shadow-sm font-bold">🎟️ 스몹 온라인 예매</a>
+                <a href="https://map.naver.com/p/entry/place/1859523278?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202606202125&locale=ko&svcName=map_pcv5" target="_blank" class="inline-block bg-white text-[10px] text-green-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">네이버 지도</a>
+                <a href="https://map.kakao.com/?q=%EC%8A%A4%EB%AA%B9%20%EA%B3%A0%EC%96%91" target="_blank" class="inline-block bg-white text-[10px] text-yellow-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">카카오맵</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">10</div>
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">20:00 ~ 22:15</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-gray-800" contenteditable="true">스타필드 내 저녁식사 및 강남터미널 이동</p>
+              <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">3호선 삼송역 → 고속터미널역 직통 이동(약 50분)</p>
+              <div class="mt-2 flex gap-1">
+                <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EA%B3%A0%EC%86%8D%EB%B2%84%EC%8A%A4%ED%84%B0%EB%AF%B8%EB%84%90?c=15.00,0,0,0,dh" target="_blank" class="inline-block bg-white text-[10px] text-green-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">네이버 지도</a>
+                <a href="https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%EA%B3%A0%EC%86%8D%EB%B2%84%EC%8A%A4%ED%84%B0%EB%AF%B8%EB%84%90" target="_blank" class="inline-block bg-white text-[10px] text-yellow-600 px-2 py-0.5 rounded-md border shadow-sm font-medium">카카오맵</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-blue-200 flex items-center justify-center font-bold text-blue-800 z-10 shrink-0 text-xs">11</div>
+            <div class="bg-blue-50/50 p-3 rounded-2xl border border-blue-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-blue-200 text-blue-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">01:00 (7/12 일)</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-blue-900" contenteditable="true">서울경부 → 마산 고속버스 탑승 🚌</p>
+              <p class="text-xs text-blue-600 mt-0.5" contenteditable="true">동양고속 심야우등 (중고생 34,800원 / 선산휴게소 하행 경유)</p>
+              <div class="mt-2"><a href="https://www.kobus.co.kr/" target="_blank" class="inline-block bg-blue-500 text-white text-[10px] px-2 py-0.5 rounded-md shadow-sm font-bold">🎟️ 돌아오는 심야버스 예매확인</a></div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 relative group">
+            <div class="w-8 h-8 rounded-full bg-emerald-200 flex items-center justify-center font-bold text-emerald-800 z-10 shrink-0 text-xs">12</div>
+            <div class="bg-emerald-50/50 p-3 rounded-2xl border border-emerald-100/50 w-full">
+              <div class="flex justify-between items-start gap-2">
+                <span class="font-bold text-xs bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">04:50 ~ 05:30</span>
+                <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+              </div>
+              <p class="font-bold text-sm text-emerald-900" contenteditable="true">마산터미널 도착 및 진해구 최종 복귀 🏠</p>
+              <p class="text-xs text-emerald-600 mt-0.5" contenteditable="true">터미널 앞에서 다 함께 심야 택시 카풀하여 안전 귀가!</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        
+        <div class="bg-amber-100/60 p-5 rounded-3xl border border-amber-200">
+          <h3 class="font-bold text-lg text-amber-900 title-font mb-3">📌 필수 체크보드</h3>
+          <div class="space-y-2 text-sm text-amber-900">
+            <p>To. 🏃‍♂️ <b>박우영 동선:</b> 16:40에 서울 분기점에서 혼자 빠져나간 뒤, 18:00까지 <b>고려대 화정체육관</b> 아카네 리제 콘서트장 무사히 입성하기!</p>
+            <div class="mt-1 flex gap-1">
+              <a href="https://map.naver.com/p/search/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90%20%ED%99%94%EC%A0%95%EC%B2%B4%EC%9C%A1%EA%B4%80/place/13316303?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202606202127&locale=ko&svcName=map_pcv5&searchText=%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90%20%ED%99%94%EC%A0%95%EC%B2%B4%EC%9C%A1%EA%B4%80" target="_blank" class="inline-block bg-white text-[10px] text-green-700 px-2 py-0.5 rounded-md border shadow-sm font-bold">네이버 지도</a>
+              <a href="https://map.kakao.com/?q=%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90%20%ED%99%94%EC%A0%95%EC%B2%B4%EC%9C%A1%EA%B4%80" target="_blank" class="inline-block bg-white text-[10px] text-yellow-700 px-2 py-0.5 rounded-md border shadow-sm font-bold">카카오맵</a>
+            </div>
+            <hr class="border-amber-200 my-2">
+            <p>🎯 <b>스몹 고양 필수 규칙:</b> 무조건 바지 + 운동화 + 양말 필수! (구두, 슬리퍼, 샌들, 치마 절대 입장 불가)</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-3xl shadow-sm border border-orange-100">
+          <h3 class="font-bold text-lg text-gray-800 title-font mb-2">📸 우리들의 예매표 / 사진첩</h3>
+          <p class="text-xs text-gray-400 mb-4">예매 완료한 동양고속 심야우등 승차권(중고생 34,800원), 콘서트 티켓 캡처를 업로드해 보세요.</p>
+          
+          <label class="block w-full border-2 border-dashed border-amber-200 hover:border-amber-400 rounded-2xl p-4 text-center cursor-pointer bg-amber-50/30 transition">
+            <span class="text-2xl">🖼️</span>
+            <span class="block text-xs font-bold text-amber-700 mt-1">여기를 클릭해서 이미지 첨부</span>
+            <input type="file" accept="image/*" class="hidden" onchange="previewImage(event)">
+          </label>
+
+          <div id="imageGallery" class="mt-4 grid grid-cols-2 gap-2">
+            </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-3xl shadow-sm border border-orange-100 text-center">
+          <p class="text-xs text-orange-600 mb-2 font-bold">💡 변경 사항 공유용</p>
+          <button onclick="exportHTML()" class="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 rounded-xl transition shadow-sm">
+            💾 수정된 전체 사이트 파일로 내보내기
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 실시간 D-Day 및 상세 카운트다운 타이머 스크립트 (출발시간: 2026년 7월 11일 새벽 05시 20분)
+    const targetDate = new Date("2026-07-11T05:20:00").getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      const titleElement = document.getElementById('dday-title');
+      const timerElement = document.getElementById('countdown-timer');
+
+      if (difference < 0) {
+        titleElement.innerText = "🎉 여행 중이거나 종료됨!";
+        timerElement.innerText = "즐거운 추억을 남기세요! ✨";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      timerElement.innerText = `D-${days} ${hours}시간 ${minutes}분 ${seconds}초`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // 웹페이지 소스 전체를 추출하여 동적으로 보존한 새 파일 내보내기 기능
+    function exportHTML() {
+      // 업로드 레이블 내부 컴포넌트 정리
+      const inputs = document.querySelectorAll('input[type="file"]');
+      inputs.forEach(input => input.value = ""); 
+
+      const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "everland_plan.html";
+      link.click();
+      URL.revokeObjectURL(link.href);
+      alert("💾 수정된 상태가 반영된 새 'everland_plan.html' 파일이 저장되었습니다!\n이 파일을 카톡방에 전달해 공유하세요.");
+    }
+
+    // 새로운 일정 항목을 추가해주는 함수
+    function addNewStep() {
+      const timeline = document.getElementById('timeline');
+      const nextIndex = timeline.children.length + 1;
+      
+      const newStep = document.createElement('div');
+      newStep.className = 'flex items-start gap-4 relative group';
+      newStep.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-amber-200 flex items-center justify-center font-bold text-amber-800 z-10 shrink-0 text-xs">${nextIndex}</div>
+        <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-100/50 w-full">
+          <div class="flex justify-between items-start gap-2">
+            <span class="font-bold text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-md mb-1 inline-block" contenteditable="true">시간 입력</span>
+            <button onclick="this.closest('.group').remove()" class="text-gray-300 hover:text-red-400 text-xs opacity-0 group-hover:opacity-100 transition">❌</button>
+          </div>
+          <p class="font-bold text-sm text-gray-800" contenteditable="true">새로운 일정을 적어보세요</p>
+          <p class="text-xs text-gray-500 mt-0.5" contenteditable="true">상세 메모를 입력해 보세요</p>
+        </div>
+      `;
+      timeline.appendChild(newStep);
+    }
+
+    // 이미지를 첨부해서 갤러리에 추가해주는 함수
+    function previewImage(event) {
+      const gallery = document.getElementById('imageGallery');
+      const file = event.target.files[0];
+      
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const div = document.createElement('div');
+          div.className = 'relative group border rounded-xl overflow-hidden shadow-sm bg-gray-50';
+          div.innerHTML = `
+            <img src="${e.target.result}" class="w-full h-32 object-cover">
+            <button onclick="this.parentNode.remove()" class="absolute top-1 right-1 bg-black/50 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">×</button>
+          `;
+          gallery.appendChild(div);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+
+</body>
+</html>
